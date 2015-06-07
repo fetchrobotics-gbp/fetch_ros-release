@@ -2,6 +2,11 @@
 Changelog for package fetch_calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.9 (2015-06-07)
+------------------
+* fix head camera parameter names
+* Contributors: Michael Ferguson
+
 0.5.8 (2015-06-07)
 ------------------
 * add script for disabling auto exposure/whitebalance of head camera

@@ -1,0 +1,12 @@
+Source: ros-indigo-fetch-calibration
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <mferguson@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: http://ros.org/wiki/fetch_calibration
+Standards-Version: 3.9.2
+
+Package: ros-indigo-fetch-calibration
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-robot-calibration
+Description: Launch and configuration files for calibrating Fetch using the 'robot_calibration' package.

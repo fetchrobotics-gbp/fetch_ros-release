@@ -2,6 +2,9 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.8 (2015-06-07)
+------------------
+
 0.5.7 (2015-06-05)
 ------------------
 * bump joint limits used for moveit

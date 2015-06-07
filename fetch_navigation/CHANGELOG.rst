@@ -2,6 +2,9 @@
 Changelog for package fetch_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.8 (2015-06-07)
+------------------
+
 0.5.7 (2015-06-05)
 ------------------
 * display whole global plan

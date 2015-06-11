@@ -2,6 +2,9 @@
 Changelog for package fetch_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.11 (2015-06-10)
+-------------------
+
 0.5.10 (2015-06-07)
 -------------------
 * fix random glitches due to having two joint states publishers

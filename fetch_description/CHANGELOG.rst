@@ -2,6 +2,9 @@
 Changelog for package fetch_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.12 (2015-06-12)
+-------------------
+
 0.5.11 (2015-06-10)
 -------------------
 * remove laser opening from collision mesh

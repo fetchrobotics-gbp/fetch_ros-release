@@ -2,6 +2,11 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.1 (2015-07-03)
+------------------
+* add (optional) octomap configuration
+* Contributors: Michael Ferguson
+
 0.6.0 (2015-06-23)
 ------------------
 

@@ -2,6 +2,11 @@
 Changelog for package fetch_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.1 (2015-07-03)
+------------------
+* specify a license
+* Contributors: Michael Ferguson
+
 0.6.0 (2015-06-23)
 ------------------
 

@@ -1,0 +1,161 @@
+ros-indigo-fetch-description (0.7.0-0saucy) saucy; urgency=high
+
+  * update limits of wrist flex
+  * remove duplicated inertia entries, fixes #14 <https://github.com/fetchrobotics/fetch_ros/issues/14>
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.6.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.6.1-0saucy) saucy; urgency=high
+
+  * specify a license
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.6.0-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.14-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.13-0saucy) saucy; urgency=high
+
+  * add dynamics to arm joints for simulation
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.12-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.11-0saucy) saucy; urgency=high
+
+  * remove laser opening from collision mesh
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.10-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.9-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.8-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.7-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.6-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.5-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.4-0saucy) saucy; urgency=high
+
+  * repository cleanup
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 09 May 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.3-0saucy) saucy; urgency=high
+
+  * Update head tilt range
+  * Contributors: Aaron Blasdel
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 03 May 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 19 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.1-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 09 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.5.0-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 04 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.4.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 23 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.4.1-0saucy) saucy; urgency=high
+
+  * update velocity limits of base motors
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 23 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.4.0-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 22 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.3.2-0saucy) saucy; urgency=high
+
+  * update limits of shoulder lift joint
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 21 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-description (0.3.1-0saucy) saucy; urgency=high
+
+  * fixup install
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 14 Mar 2015 02:53:00 -0000
+
+ros-indigo-fetch-description (0.3.0-0saucy) saucy; urgency=high
+
+  * first release
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 14 Mar 2015 01:59:00 -0000
+
+

@@ -1,0 +1,147 @@
+ros-indigo-fetch-teleop (0.7.0-0saucy) saucy; urgency=high
+
+  * Require deadman to be held while tucking
+  * add missing moveit_python depend
+  * Contributors: Alex Henning, Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.6.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.6.1-0saucy) saucy; urgency=high
+
+  * make pan/tilt acceleration parameterized
+  * update head tilt joint limits in teleop
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.6.0-0saucy) saucy; urgency=high
+
+  * install tuck_arm.py
+  * add a keepout zone for extra margin around base
+  * add ability to run tuck arm script without joystick
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.14-0saucy) saucy; urgency=high
+
+  * add script to tuck arm
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.13-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.12-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.11-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.10-0saucy) saucy; urgency=high
+
+  * fix random glitches due to having two joint states publishers
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.9-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.8-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.7-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.6-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.5-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.4-0saucy) saucy; urgency=high
+
+  * repository cleanup
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 09 May 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.3-0saucy) saucy; urgency=high
+
+  * set a slower reverse speed for teleop
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 03 May 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.2-0saucy) saucy; urgency=high
+
+  * prevent teleop command from winding up ahead of actual velocity
+  * use -Wall, publish should return void
+  * stop supressed components
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 19 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.1-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 09 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.5.0-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 04 Apr 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.4.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 23 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.4.1-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 23 Mar 2015 07:00:00 -0000
+
+ros-indigo-fetch-teleop (0.4.0-0saucy) saucy; urgency=high
+
+  * initial release
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 22 Mar 2015 07:00:00 -0000
+
+

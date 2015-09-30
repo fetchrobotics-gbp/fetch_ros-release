@@ -2,6 +2,12 @@
 Changelog for package fetch_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.0 (2015-09-29)
+------------------
+* Require deadman to be held while tucking
+* add missing moveit_python depend
+* Contributors: Alex Henning, Michael Ferguson
+
 0.6.2 (2015-07-30)
 ------------------
 

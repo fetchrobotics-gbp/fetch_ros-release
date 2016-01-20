@@ -2,6 +2,9 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.1 (2016-01-20)
+------------------
+
 0.7.0 (2015-09-29)
 ------------------
 * fix dependency issue with run/test duplication

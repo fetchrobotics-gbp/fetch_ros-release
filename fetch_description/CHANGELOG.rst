@@ -2,6 +2,13 @@
 Changelog for package fetch_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.1 (2016-01-20)
+------------------
+* update torso throw to match rev2 hardware
+* make laser actually level
+* update gripper model
+* Contributors: Michael Ferguson
+
 0.7.0 (2015-09-29)
 ------------------
 * update limits of wrist flex

@@ -1,23 +1,32 @@
 /*
- * Copyright 2015 Fetch Robotics Inc.
- * All Rights Reserved.
+ * Copyright (c) 2015, Fetch Robotics Inc.
+ * All rights reserved.
  *
- * THIS WORK, IN SOURCE OR BINARY FORMAT IS PROVIDED UNDER THE TERMS
- * OF THE CREATIVE COMMONS ATTRIBUTION-NONCOMMERCIAL-NODERIVATIVES
- * 4.0 INTERNATIONAL LICENSE. A FULL COPY OF THE LICENSE CAN BE FOUND
- * AT https://creativecommons.org/licenses/by-nc-nd/4.0/
-
- * THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW.
- * ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE
- * OR COPYRIGHT LAW IS PROHIBITED.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO
- * BE BOUND BY THE TERMS OF THIS LICENSE. THE LICENSOR GRANTS YOU THE RIGHTS
- * CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
- * CONDITIONS.
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the Fetch Robotics Inc. nor the names of its
+ *       contributors may be used to endorse or promote products derived from
+ *       this software without specific prior written permission.
  *
- * Author: Anuj Pasricha, Michael Ferguson
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL FETCH ROBOTICS INC. BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
+// Author: Anuj Pasricha, Michael Ferguson
 
 #include <pluginlib/class_list_macros.h>
 #include <fetch_depth_layer/depth_layer.h>
@@ -64,8 +73,11 @@ void FetchDepthLayer::onInitialize()
   ros::NodeHandle private_nh("~/" + name_);
 
   private_nh.param("publish_observations", publish_observations_, false);
-  private_nh.param("ground_orientation_threshold", ground_threshold_, 0.9);
   private_nh.param("observations_separation_threshold", observations_threshold_, 0.06);
+
+  // Optionally detect the ground plane
+  private_nh.param("find_ground_plane", find_ground_plane_, true);
+  private_nh.param("ground_orientation_threshold", ground_threshold_, 0.9);
 
   if (publish_observations_)
   {
@@ -73,14 +85,16 @@ void FetchDepthLayer::onInitialize()
     marking_pub_ = private_nh.advertise<sensor_msgs::PointCloud>("marking_obs", 1);
   }
 
-  // TODO add params for topic names
-
+  // subscribe to camera/info topics
+  std::string camera_depth_topic, camera_info_topic;
+  private_nh.param("depth_topic", camera_depth_topic,
+                   std::string("/head_camera/depth_downsample/image_raw"));
+  private_nh.param("info_topic", camera_info_topic,
+                   std::string("/head_camera/depth_downsample/camera_info"));
   camera_info_sub_ = private_nh.subscribe<sensor_msgs::CameraInfo>(
-    "/head_camera/depth_downsample/camera_info",
-    10, &FetchDepthLayer::cameraInfoCallback, this);
+    camera_info_topic, 10, &FetchDepthLayer::cameraInfoCallback, this);
   depth_image_sub_ = private_nh.subscribe<sensor_msgs::Image>(
-    "/head_camera/depth_downsample/image_raw",
-    10, &FetchDepthLayer::depthImageCallback, this);
+    camera_depth_topic, 10, &FetchDepthLayer::depthImageCallback, this);
 }
 
 FetchDepthLayer::~FetchDepthLayer()
@@ -147,50 +161,69 @@ void FetchDepthLayer::depthImageCallback(
   cv::Mat points3d;
   cv::depthTo3d(cv_ptr->image, K_, points3d);
 
-  // Get normals
-  if (normals_estimator_.empty())
-  {
-    normals_estimator_ = new cv::RgbdNormals(cv_ptr->image.rows,
-                                             cv_ptr->image.cols,
-                                             cv_ptr->image.depth(),
-                                             K_);
-  }
-  cv::Mat normals;
-  (*normals_estimator_)(points3d, normals);
-
-  // Find plane(s)
-  if (plane_estimator_.empty())
-  {
-    plane_estimator_ = cv::Algorithm::create<cv::RgbdPlane>("RGBD.RgbdPlane");
-    // Model parameters are based on notes in opencv_candidate
-    plane_estimator_->set("sensor_error_a", 0.0075);
-    plane_estimator_->set("sensor_error_b", 0.0);
-    plane_estimator_->set("sensor_error_c", 0.0);
-    // Image/cloud height/width must be multiple of block size
-    plane_estimator_->set("block_size", 40);
-    // Distance a point can be from plane and still be part of it
-    plane_estimator_->set("threshold", observations_threshold_);
-    // Minimum cluster size to be a plane
-    plane_estimator_->set("min_size", 1000);
-  }
-  cv::Mat planes_mask;
-  std::vector<cv::Vec4f> plane_coefficients;
-  (*plane_estimator_)(points3d, normals, planes_mask, plane_coefficients);
-
+  // Determine ground plane, either through camera or TF
   cv::Vec4f ground_plane;
-  for (size_t i=0; i < plane_coefficients.size(); i++)
+  if (find_ground_plane_)
   {
-    // check plane orientation
-    if ((fabs(0.0 - plane_coefficients[i][0]) <= ground_threshold_) &&
-        (fabs(1.0 + plane_coefficients[i][1]) <= ground_threshold_) &&
-        (fabs(0.0 - plane_coefficients[i][2]) <= ground_threshold_))
+    // Get normals
+    if (normals_estimator_.empty())
     {
-      ground_plane = plane_coefficients[i];
-      break;
+      normals_estimator_ = new cv::RgbdNormals(cv_ptr->image.rows,
+                                               cv_ptr->image.cols,
+                                               cv_ptr->image.depth(),
+                                               K_);
+    }
+    cv::Mat normals;
+    (*normals_estimator_)(points3d, normals);
+
+    // Find plane(s)
+    if (plane_estimator_.empty())
+    {
+      plane_estimator_ = cv::Algorithm::create<cv::RgbdPlane>("RGBD.RgbdPlane");
+      // Model parameters are based on notes in opencv_candidate
+      plane_estimator_->set("sensor_error_a", 0.0075);
+      plane_estimator_->set("sensor_error_b", 0.0);
+      plane_estimator_->set("sensor_error_c", 0.0);
+      // Image/cloud height/width must be multiple of block size
+      plane_estimator_->set("block_size", 40);
+      // Distance a point can be from plane and still be part of it
+      plane_estimator_->set("threshold", observations_threshold_);
+      // Minimum cluster size to be a plane
+      plane_estimator_->set("min_size", 1000);
+    }
+    cv::Mat planes_mask;
+    std::vector<cv::Vec4f> plane_coefficients;
+    (*plane_estimator_)(points3d, normals, planes_mask, plane_coefficients);
+
+    for (size_t i = 0; i < plane_coefficients.size(); i++)
+    {
+      // check plane orientation
+      if ((fabs(0.0 - plane_coefficients[i][0]) <= ground_threshold_) &&
+          (fabs(1.0 + plane_coefficients[i][1]) <= ground_threshold_) &&
+          (fabs(0.0 - plane_coefficients[i][2]) <= ground_threshold_))
+      {
+        ground_plane = plane_coefficients[i];
+        break;
+      }
     }
   }
+  else
+  {
+    // find ground plane in camera coordinates using tf
+    // transform normal axis
+    tf::Stamped<tf::Vector3> vector(tf::Vector3(0, 0, 1), ros::Time(0), "base_link");
+    tf_->transformVector(msg->header.frame_id, vector, vector);
+    ground_plane[0] = vector.getX();
+    ground_plane[1] = vector.getY();
+    ground_plane[2] = vector.getZ();
 
-  // check that ground plane actually exists, so walls don't count as clearing observations
+    // find offset
+    tf::StampedTransform transform;
+    tf_->lookupTransform("base_link", msg->header.frame_id, ros::Time(0), transform);
+    ground_plane[3] = transform.getOrigin().getZ();
+  }
+
+  // check that ground plane actually exists, so it doesn't count as marking observations
   if (ground_plane[0] == 0.0 && ground_plane[1] == 0.0 &&
       ground_plane[2] == 0.0 && ground_plane[3] == 0.0)
   {
@@ -209,13 +242,13 @@ void FetchDepthLayer::depthImageCallback(
   marking_points.header.stamp = msg->header.stamp;
   marking_points.header.frame_id = msg->header.frame_id;
 
-  // Points at edges of image can be very noisy, exclude them
-  int skip = 10;  // TODO should be ROS param
+  // Points at edges of image can be very noisy, exclude them from marking (not from clearing!).
+  const int skip = 20;  // TODO should be ROS param
 
   // Put points in clearing/marking clouds
-  for (size_t i=skip; i<points3d.rows-skip; i++)
+  for (size_t i = 0; i < points3d.rows; i++)
   {
-    for (size_t j=skip; j<points3d.cols-skip; j++)
+    for (size_t j = 0; j < points3d.cols; j++)
     {
       // Get next point
       geometry_msgs::Point32 current_point;
@@ -230,51 +263,56 @@ void FetchDepthLayer::depthImageCallback(
           !isnan(current_point.y) &&
           !isnan(current_point.z))
       {
+        // Mark all points for clearance.
+        clearing_points.points.push_back(current_point);
+
+        // Do not consider boundary points for obstacles marking since they are very noisy.
+        if (i < skip || i >= points3d.rows - skip || j < skip || j >= points3d.cols - skip)
+        {
+          continue;
+        }
+
         // Check if point is part of the ground plane
         if (fabs(ground_plane[0] * current_point.x +
                  ground_plane[1] * current_point.y +
                  ground_plane[2] * current_point.z +
                  ground_plane[3]) <= observations_threshold_)
         {
-          clearing_points.points.push_back(current_point);
+          continue;  // Do not mark points near the floor.
         }
-        else
+
+        // Check for outliers, mark non-outliers as obstacles.
+        int num_valid = 0;
+        for (int x = -1; x < 2; x++)
         {
-          // Not inlier, should it be outlier?
-          int num_valid = 0;
-          for (int x=-1; x < 2; x++)
+          for (int y = -1; y < 2; y++)
           {
-            for (int y=-1; y < 2; y++)
+            if (x == 0 && y == 0)
             {
-              if (x == 0 && y == 0)
-                continue;
-              geometry_msgs::Point32 test_point;
-              test_point.x = channels[0].at<float>(i+x, j+y);
-              test_point.y = channels[1].at<float>(i+x, j+y);
-              test_point.z = channels[2].at<float>(i+x, j+y);
-              if (test_point.x != 0.0 &&
-                  test_point.y != 0.0 &&
-                  test_point.z != 0.0 &&
-                  !isnan(test_point.x) &&
-                  !isnan(test_point.y) &&
-                  !isnan(test_point.z))
+              continue;
+            }
+            float px = channels[0].at<float>(i+x, j+y);
+            float py = channels[1].at<float>(i+x, j+y);
+            float pz = channels[2].at<float>(i+x, j+y);
+            if (px != 0.0 && py != 0.0 && pz != 0.0 &&
+                !isnan(px) && !isnan(py) && !isnan(pz))
+            {
+              if ( fabs(px - current_point.x) < 0.1 &&
+                    fabs(py - current_point.y) < 0.1 &&
+                    fabs(pz - current_point.z) < 0.1)
               {
-                if ( fabs(test_point.x - current_point.x) < 0.1 &&
-                     fabs(test_point.y - current_point.y) < 0.1 &&
-                     fabs(test_point.z - current_point.z) < 0.1)
-                {
-                  num_valid++;
-                }
+                num_valid++;
               }
-            }  // for y
-          }  // for x
-          if (num_valid >= 7)
-          {
-            marking_points.points.push_back(current_point);
-          }
+            }
+          }  // for y
+        }  // for x
+
+        if (num_valid >= 7)
+        {
+          marking_points.points.push_back(current_point);
         }
-      }
-    }
+      }  // for j (y)
+    }  // for i (x)
   }
 
   if (clearing_points.points.size() > 0)

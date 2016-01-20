@@ -104,7 +104,7 @@
     <parent link="base_link" />
     <child link="torso_lift_link" />
     <axis xyz="0 0 1" />
-    <limit effort="450.0" lower="0" upper="0.4" velocity="0.1" />
+    <limit effort="450.0" lower="0" upper="0.38615" velocity="0.1" />
   <dynamics damping="100.0" /></joint>
   <link name="head_pan_link">
     <inertial>
@@ -560,7 +560,7 @@
     </collision>
   </link>
   <joint name="laser_joint" type="fixed">
-    <origin rpy="3.1415 0 0" xyz="0.235 0 0.2878" />
+    <origin rpy="3.14159265359 0 0" xyz="0.235 0 0.2878" />
     <parent link="base_link" />
     <child link="laser_link" />
     <axis xyz="0 0 0" />

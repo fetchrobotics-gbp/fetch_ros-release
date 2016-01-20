@@ -2,6 +2,9 @@
 Changelog for package fetch_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.1 (2016-01-20)
+------------------
+
 0.7.0 (2015-09-29)
 ------------------
 * Require deadman to be held while tucking

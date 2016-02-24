@@ -30,6 +30,7 @@
 
 #include <pluginlib/class_list_macros.h>
 #include <fetch_depth_layer/depth_layer.h>
+#include <limits>
 
 PLUGINLIB_EXPORT_CLASS(costmap_2d::FetchDepthLayer, costmap_2d::Layer)
 
@@ -46,13 +47,42 @@ void FetchDepthLayer::onInitialize()
 
   double observation_keep_time = 0.0;
   double expected_update_rate = 0.0;
-  double min_obstacle_height = 0.0;
-  double max_obstacle_height = 2.0;
   double transform_tolerance = 0.5;
   double obstacle_range = 2.5;
   double raytrace_range = 3.0;
+  double min_obstacle_height;
+  double max_obstacle_height;
+  double min_clearing_height;
+  double max_clearing_height;
   std::string topic = "";
   std::string sensor_frame = "";
+
+  ros::NodeHandle private_nh("~/" + name_);
+
+  private_nh.param("publish_observations", publish_observations_, false);
+  private_nh.param("observations_separation_threshold", observations_threshold_, 0.06);
+
+  // Optionally detect the ground plane
+  private_nh.param("find_ground_plane", find_ground_plane_, true);
+  private_nh.param("ground_orientation_threshold", ground_threshold_, 0.9);
+
+  // Should NANs be used as clearing observations?
+  private_nh.param("clear_nans", clear_nans_, false);
+
+  // Observation range values for both marking and clearing
+  private_nh.param("min_obstacle_height", min_obstacle_height, 0.0);
+  private_nh.param("max_obstacle_height", max_obstacle_height, 2.0);
+  private_nh.param("min_clearing_height", min_clearing_height, -std::numeric_limits<double>::infinity());
+  private_nh.param("max_clearing_height", max_clearing_height, std::numeric_limits<double>::infinity());
+
+  // Skipping of potentially noisy rays near the edge of the image
+  private_nh.param("skip_rays_bottom", skip_rays_bottom_, 20);
+  private_nh.param("skip_rays_top",    skip_rays_top_,    20);
+  private_nh.param("skip_rays_left",   skip_rays_left_,   20);
+  private_nh.param("skip_rays_right",  skip_rays_right_,  20);
+
+  // Should skipped edge rays be used for clearing?
+  private_nh.param("clear_with_skipped_rays", clear_with_skipped_rays_, false);
 
   marking_buf_ = boost::shared_ptr<costmap_2d::ObservationBuffer> (
   	new costmap_2d::ObservationBuffer(topic, observation_keep_time,
@@ -65,19 +95,10 @@ void FetchDepthLayer::onInitialize()
 
   clearing_buf_ =  boost::shared_ptr<costmap_2d::ObservationBuffer> (
   	new costmap_2d::ObservationBuffer(topic, observation_keep_time,
-  	  expected_update_rate, min_obstacle_height, max_obstacle_height,
+  	  expected_update_rate, min_clearing_height, max_clearing_height,
   	  obstacle_range, raytrace_range, *tf_, global_frame_,
   	  sensor_frame, transform_tolerance));
   clearing_buffers_.push_back(clearing_buf_);
-
-  ros::NodeHandle private_nh("~/" + name_);
-
-  private_nh.param("publish_observations", publish_observations_, false);
-  private_nh.param("observations_separation_threshold", observations_threshold_, 0.06);
-
-  // Optionally detect the ground plane
-  private_nh.param("find_ground_plane", find_ground_plane_, true);
-  private_nh.param("ground_orientation_threshold", ground_threshold_, 0.9);
 
   if (publish_observations_)
   {
@@ -155,6 +176,16 @@ void FetchDepthLayer::depthImageCallback(
   {
     ROS_ERROR("cv_bridge exception: %s", e.what());
     return;
+  }
+
+  // Clear with NANs?
+  if (clear_nans_)
+  {
+    for (int i = 0; i < cv_ptr->image.rows * cv_ptr->image.cols; i++)
+    {
+      if (isnan(cv_ptr->image.at<float>(i)))
+        cv_ptr->image.at<float>(i) = 25.0;
+    }
   }
 
   // Convert to 3d
@@ -242,9 +273,6 @@ void FetchDepthLayer::depthImageCallback(
   marking_points.header.stamp = msg->header.stamp;
   marking_points.header.frame_id = msg->header.frame_id;
 
-  // Points at edges of image can be very noisy, exclude them from marking (not from clearing!).
-  const int skip = 20;  // TODO should be ROS param
-
   // Put points in clearing/marking clouds
   for (size_t i = 0; i < points3d.rows; i++)
   {
@@ -263,13 +291,25 @@ void FetchDepthLayer::depthImageCallback(
           !isnan(current_point.y) &&
           !isnan(current_point.z))
       {
-        // Mark all points for clearance.
-        clearing_points.points.push_back(current_point);
+        if (clear_with_skipped_rays_)
+        {
+          // If edge rays are to be used for clearing, go ahead and add them now.
+          clearing_points.points.push_back(current_point);
+        }
 
         // Do not consider boundary points for obstacles marking since they are very noisy.
-        if (i < skip || i >= points3d.rows - skip || j < skip || j >= points3d.cols - skip)
+        if (i < skip_rays_top_ ||
+            i >= points3d.rows - skip_rays_bottom_ ||
+            j < skip_rays_left_ ||
+            j >= points3d.cols - skip_rays_right_)
         {
           continue;
+        }
+
+        if (!clear_with_skipped_rays_)
+        {
+          // If edge rays are not to be used for clearing, only add them after the edge check.
+          clearing_points.points.push_back(current_point);
         }
 
         // Check if point is part of the ground plane

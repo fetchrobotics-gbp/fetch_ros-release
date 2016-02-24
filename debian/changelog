@@ -1,0 +1,105 @@
+ros-indigo-fetch-navigation (0.7.2-0saucy) saucy; urgency=high
+
+  * Fix location of recovery behavior parameters in yaml configs
+  * Contributors: Kei Okada, Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-indigo-fetch-navigation (0.7.1-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-indigo-fetch-navigation (0.7.0-0saucy) saucy; urgency=high
+
+  * Use fetch_maps package for maps
+  * Allow overriding of move base & amcl param files
+  * Contributors: Aaron Blasdel, Ian Danforth
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.6.2-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.6.1-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.6.0-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.14-0saucy) saucy; urgency=high
+
+  * fetch_navigation depends fetch_depth_layer
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.13-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.12-0saucy) saucy; urgency=high
+
+  * Slam_karto node rename in launch
+  * Contributors: Aaron Blasdel
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.11-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.10-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.9-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.8-0saucy) saucy; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.7-0saucy) saucy; urgency=high
+
+  * display whole global plan
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.6-0saucy) saucy; urgency=high
+
+  * remap static_map service for keepout server
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-indigo-fetch-navigation (0.5.5-0saucy) saucy; urgency=high
+
+  * import navigation
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+

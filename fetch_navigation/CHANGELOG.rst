@@ -2,6 +2,11 @@
 Changelog for package fetch_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.3 (2016-03-05)
+------------------
+* Update to new maps
+* Contributors: Aaron Blasdel
+
 0.7.2 (2016-02-24)
 ------------------
 * Fix location of recovery behavior parameters in yaml configs

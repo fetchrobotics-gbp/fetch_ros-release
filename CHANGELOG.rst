@@ -2,6 +2,9 @@
 Changelog for package fetch_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.8 (2016-07-18)
+------------------
+
 0.7.7 (2016-06-20)
 ------------------
 * remove run_depend on metapackage

@@ -1,0 +1,15 @@
+ros-indigo-freight-calibration (0.7.9-0trusty) trusty; urgency=high
+
+  * updated script and corrected calibration parameters
+  * Contributors: narora1
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-indigo-freight-calibration (0.7.8-0trusty) trusty; urgency=high
+
+  * First release
+  * Contributors: Niharika Arora
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+

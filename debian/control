@@ -1,0 +1,12 @@
+Source: ros-jade-fetch-navigation
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <mferguson@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-jade-catkin, ros-jade-roslaunch
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jade-fetch-navigation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jade-amcl, ros-jade-base-local-planner, ros-jade-clear-costmap-recovery, ros-jade-costmap-2d, ros-jade-fetch-depth-layer, ros-jade-fetch-maps, ros-jade-map-server, ros-jade-move-base, ros-jade-move-base-msgs, ros-jade-navfn, ros-jade-rotate-recovery, ros-jade-slam-karto, ros-jade-voxel-grid
+Description: Configuration and launch files for running ROS navigation on Fetch.

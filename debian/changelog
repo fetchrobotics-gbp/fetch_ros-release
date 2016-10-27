@@ -1,0 +1,69 @@
+ros-jade-fetch-maps (0.7.10-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.9-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.8-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.7-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.6-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.5-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.4-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-jade-fetch-maps (0.7.3-0utopic) utopic; urgency=high
+
+  * 3_1_16 new map
+  * Contributors: Aaron Blasdel
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-jade-fetch-maps (0.7.2-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-jade-fetch-maps (0.7.1-0utopic) utopic; urgency=high
+
+
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-jade-fetch-maps (0.7.0-0utopic) utopic; urgency=high
+
+  * Create fetch_maps package
+  * Contributors: Aaron Blasdel, Michael Ferguson
+
+ -- Michael Ferguson <mferguson@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+

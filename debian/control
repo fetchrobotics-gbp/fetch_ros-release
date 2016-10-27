@@ -1,0 +1,12 @@
+Source: ros-jade-fetch-description
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <mferguson@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-jade-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jade-fetch-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jade-urdf, ros-jade-xacro
+Description: URDF for Fetch Robot.

@@ -1,0 +1,12 @@
+Source: ros-jade-fetch-ikfast-plugin
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <mferguson@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), liblapack-dev, ros-jade-catkin, ros-jade-moveit-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf-conversions
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jade-fetch-ikfast-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblapack-dev, ros-jade-moveit-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf-conversions
+Description: Kinematics plugin for Fetch robot, generated through IKFast

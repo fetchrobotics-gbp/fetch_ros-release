@@ -2,6 +2,14 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.12 (2017-08-02)
+-------------------
+* add dependency for moveit
+* Contributors: Michael Ferguson
+
+0.7.11 (2017-07-31)
+-------------------
+
 0.7.10 (2016-10-27)
 -------------------
 * update package.xmls, add depend on fetch_ikfast_plugin

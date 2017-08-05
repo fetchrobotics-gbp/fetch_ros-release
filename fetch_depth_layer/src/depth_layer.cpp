@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Fetch Robotics Inc.
+ * Copyright (c) 2015-2016, Fetch Robotics Inc.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -216,14 +216,14 @@ void FetchDepthLayer::depthImageCallback(
   {
     for (int i = 0; i < cv_ptr->image.rows * cv_ptr->image.cols; i++)
     {
-      if (isnan(cv_ptr->image.at<float>(i)))
+      if (std::isnan(cv_ptr->image.at<float>(i)))
         cv_ptr->image.at<float>(i) = 25.0;
     }
   }
 
   // Convert to 3d
   cv::Mat points3d;
-  cv::depthTo3d(cv_ptr->image, K_, points3d);
+  depthTo3d(cv_ptr->image, K_, points3d);
 
   // Determine ground plane, either through camera or TF
   cv::Vec4f ground_plane;
@@ -232,10 +232,10 @@ void FetchDepthLayer::depthImageCallback(
     // Get normals
     if (normals_estimator_.empty())
     {
-      normals_estimator_ = new cv::RgbdNormals(cv_ptr->image.rows,
-                                               cv_ptr->image.cols,
-                                               cv_ptr->image.depth(),
-                                               K_);
+      normals_estimator_ = new RgbdNormals(cv_ptr->image.rows,
+                                           cv_ptr->image.cols,
+                                           cv_ptr->image.depth(),
+                                           K_);
     }
     cv::Mat normals;
     (*normals_estimator_)(points3d, normals);
@@ -243,7 +243,20 @@ void FetchDepthLayer::depthImageCallback(
     // Find plane(s)
     if (plane_estimator_.empty())
     {
-      plane_estimator_ = cv::Algorithm::create<cv::RgbdPlane>("RGBD.RgbdPlane");
+#if CV_MAJOR_VERSION == 3
+      plane_estimator_.reset(new RgbdPlane());
+      // Model parameters are based on notes in opencv_candidate
+      plane_estimator_->setSensorErrorA(0.0075);
+      plane_estimator_->setSensorErrorB(0.0);
+      plane_estimator_->setSensorErrorC(0.0);
+      // Image/cloud height/width must be multiple of block size
+      plane_estimator_->setBlockSize(40);
+      // Distance a point can be from plane and still be part of it
+      plane_estimator_->setThreshold(observations_threshold_);
+      // Minimum cluster size to be a plane
+      plane_estimator_->setMinSize(1000);
+#else
+      plane_estimator_ = cv::Algorithm::create<RgbdPlane>("RGBD.RgbdPlane");
       // Model parameters are based on notes in opencv_candidate
       plane_estimator_->set("sensor_error_a", 0.0075);
       plane_estimator_->set("sensor_error_b", 0.0);
@@ -254,6 +267,7 @@ void FetchDepthLayer::depthImageCallback(
       plane_estimator_->set("threshold", observations_threshold_);
       // Minimum cluster size to be a plane
       plane_estimator_->set("min_size", 1000);
+#endif
     }
     cv::Mat planes_mask;
     std::vector<cv::Vec4f> plane_coefficients;
@@ -320,9 +334,9 @@ void FetchDepthLayer::depthImageCallback(
       if (current_point.x != 0.0 &&
           current_point.y != 0.0 &&
           current_point.z != 0.0 &&
-          !isnan(current_point.x) &&
-          !isnan(current_point.y) &&
-          !isnan(current_point.z))
+          !std::isnan(current_point.x) &&
+          !std::isnan(current_point.y) &&
+          !std::isnan(current_point.z))
       {
         if (clear_with_skipped_rays_)
         {
@@ -368,7 +382,7 @@ void FetchDepthLayer::depthImageCallback(
             float py = channels[1].at<float>(i+x, j+y);
             float pz = channels[2].at<float>(i+x, j+y);
             if (px != 0.0 && py != 0.0 && pz != 0.0 &&
-                !isnan(px) && !isnan(py) && !isnan(pz))
+                !std::isnan(px) && !std::isnan(py) && !std::isnan(pz))
             {
               if ( fabs(px - current_point.x) < 0.1 &&
                     fabs(py - current_point.y) < 0.1 &&

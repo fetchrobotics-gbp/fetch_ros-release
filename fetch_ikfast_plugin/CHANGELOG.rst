@@ -1,19 +1,18 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package fetch_moveit_config
+Changelog for package fetch_ikfast_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.7.12 (2017-08-02)
 -------------------
-* add dependency for moveit
-* Contributors: Michael Ferguson
 
 0.7.11 (2017-07-31)
 -------------------
 
 0.7.10 (2016-10-27)
 -------------------
+* fix build with urdf on kinetic
 * update package.xmls, add depend on fetch_ikfast_plugin
-* load the ikfast kinematics plugin
+* get a version of ikfast plugin working on fetch
 * Contributors: Di Sun, Michael Ferguson
 
 0.7.9 (2016-07-26)
@@ -45,21 +44,18 @@ Changelog for package fetch_moveit_config
 
 0.7.0 (2015-09-29)
 ------------------
-* fix dependency issue with run/test duplication
-* add missing moveit_python depend
-* fix name of gripper fingers in fake controllers
-* Contributors: Michael Ferguson
 
 0.6.2 (2015-07-30)
 ------------------
 
 0.6.1 (2015-07-03)
 ------------------
-* add (optional) octomap configuration
-* Contributors: Michael Ferguson
 
-0.6.0 (2015-06-23)
-------------------
+0.6.0 (2015-06-23 19:47)
+------------------------
+
+0.5.15 (2015-06-23 19:44)
+-------------------------
 
 0.5.14 (2015-06-19)
 -------------------
@@ -73,19 +69,17 @@ Changelog for package fetch_moveit_config
 0.5.11 (2015-06-10)
 -------------------
 
-0.5.10 (2015-06-07)
--------------------
+0.5.10 (2015-06-07 12:48)
+-------------------------
 
-0.5.9 (2015-06-07)
-------------------
+0.5.9 (2015-06-07 12:28)
+------------------------
 
-0.5.8 (2015-06-07)
-------------------
+0.5.8 (2015-06-07 00:16)
+------------------------
 
 0.5.7 (2015-06-05)
 ------------------
-* bump joint limits used for moveit
-* Contributors: Michael Ferguson
 
 0.5.6 (2015-06-04)
 ------------------
@@ -94,10 +88,6 @@ Changelog for package fetch_moveit_config
 ------------------
 
 0.5.4 (2015-05-09)
-------------------
-* repository cleanup
-
-0.5.3 (2015-05-03)
 ------------------
 
 0.5.2 (2015-04-19)
@@ -108,5 +98,21 @@ Changelog for package fetch_moveit_config
 
 0.5.0 (2015-04-04)
 ------------------
-* First public release
-* Contributors: Michael Ferguson
+
+0.4.2 (2015-03-23 18:57)
+------------------------
+
+0.4.1 (2015-03-23 14:50)
+------------------------
+
+0.4.0 (2015-03-22)
+------------------
+
+0.3.2 (2015-03-21)
+------------------
+
+0.3.1 (2015-03-13 19:53)
+------------------------
+
+0.3.0 (2015-03-13 18:59)
+------------------------

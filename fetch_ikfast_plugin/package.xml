@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ASCII'?>
 <package>
   <name>fetch_ikfast_plugin</name>
-  <version>0.7.14</version>
+  <version>0.7.15</version>
   <description>
     Kinematics plugin for Fetch robot, generated through IKFast
   </description>
@@ -11,6 +11,10 @@
   <maintainer email="amoriarty@fetchrobotics.com">Alex Moriarty</maintainer>
 
   <license>Apache2</license>
+  <url type="wiki">http://ros.org/wiki/fetch_ikfast_plugin</url>
+  <url type="website">http://docs.fetchrobotics.com/manipulation.html</url>
+  <url type="bugtracker">https://github.com/fetchrobotics/fetch_ros/issues</url>
+  <url type="repository">https://github.com/fetchrobotics/fetch_ros</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 

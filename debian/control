@@ -1,0 +1,12 @@
+Source: ros-kinetic-fetch-navigation
+Section: misc
+Priority: extra
+Maintainer: Russell Toris <rtoris@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin, ros-kinetic-roslaunch
+Homepage: http://docs.fetchrobotics.com/navigation.html
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-fetch-navigation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-amcl, ros-kinetic-base-local-planner, ros-kinetic-clear-costmap-recovery, ros-kinetic-costmap-2d, ros-kinetic-fetch-depth-layer, ros-kinetic-fetch-maps, ros-kinetic-map-server, ros-kinetic-move-base, ros-kinetic-move-base-msgs, ros-kinetic-navfn, ros-kinetic-rotate-recovery, ros-kinetic-slam-karto, ros-kinetic-voxel-grid
+Description: Configuration and launch files for running ROS navigation on Fetch.

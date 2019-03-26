@@ -1,0 +1,12 @@
+Source: ros-indigo-fetch-navigation
+Section: misc
+Priority: extra
+Maintainer: Russell Toris <rtoris@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin, ros-indigo-roslaunch
+Homepage: http://docs.fetchrobotics.com/navigation.html
+Standards-Version: 3.9.2
+
+Package: ros-indigo-fetch-navigation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-amcl, ros-indigo-base-local-planner, ros-indigo-clear-costmap-recovery, ros-indigo-costmap-2d, ros-indigo-fetch-depth-layer, ros-indigo-fetch-maps, ros-indigo-map-server, ros-indigo-move-base, ros-indigo-move-base-msgs, ros-indigo-navfn, ros-indigo-rotate-recovery, ros-indigo-slam-karto, ros-indigo-voxel-grid
+Description: Configuration and launch files for running ROS navigation on Fetch.

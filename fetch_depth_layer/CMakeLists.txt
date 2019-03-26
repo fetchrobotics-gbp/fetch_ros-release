@@ -8,43 +8,22 @@ find_package(catkin REQUIRED
     image_transport
     cv_bridge
     sensor_msgs
-    geometry_msgs
-    tf2_ros
+    opencv_candidate
     costmap_2d
     nav_msgs
 )
 
-find_package(OpenCV 3.2 REQUIRED)
-
-catkin_package(
-  INCLUDE_DIRS
-    include
-  LIBRARIES
-    fech_depth_layer
-  CATKIN_DEPENDS
-    image_transport
-    cv_bridge
-    roscpp
-    sensor_msgs
-    tf2_ros
-    geometry_msgs
-    costmap_2d
-    nav_msgs
-  DEPENDS
-    OpenCV
-)
+catkin_package()
 
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
 )
 
 add_library(fetch_depth_layer src/depth_layer.cpp)
 
 target_link_libraries(fetch_depth_layer
   ${catkin_LIBRARIES}
-  ${OpenCV_LIBRARIES}
 )
 
 install(FILES costmap_plugins.xml

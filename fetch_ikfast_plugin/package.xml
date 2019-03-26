@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ASCII'?>
-<package format="2">
+<package>
   <name>fetch_ikfast_plugin</name>
-  <version>0.8.0</version>
+  <version>0.7.15</version>
   <description>
     Kinematics plugin for Fetch robot, generated through IKFast
   </description>
@@ -18,11 +18,17 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>liblapack-dev</depend>
-  <depend>moveit_core</depend>
-  <depend>pluginlib</depend>
-  <depend>roscpp</depend>
-  <depend>tf_conversions</depend>
+  <build_depend>moveit_core</build_depend>
+  <build_depend>liblapack-dev</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf_conversions</build_depend>
+  <build_depend>pluginlib</build_depend>
+
+  <run_depend>moveit_core</run_depend>
+  <run_depend>liblapack-dev</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf_conversions</run_depend>
+  <run_depend>pluginlib</run_depend>
 
   <export>
     <moveit_core plugin="${prefix}/fetch_arm_moveit_ikfast_plugin_description.xml"/>

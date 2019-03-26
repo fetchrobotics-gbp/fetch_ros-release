@@ -47,17 +47,13 @@ free_frames:
    yaw: false
 error_blocks:
  - name: hand_eye
-   type: chain3d_to_chain3d
-   model_a: camera
-   model_b: arm
+   type: camera3d_to_arm
+   camera: camera
+   arm: arm
  - name: ground_plane
-   type: chain3d_to_plane
-   model_a: camera
-   a: 0.0
-   b: 0.0
-   c: 1.0
-   d: 0.0
-   scale: 1.0
+   type: camera3d_to_ground
+   camera: camera
+   ground: ground
  - name: restrict_camera
    type: outrageous
    param: head_camera_rgb_joint

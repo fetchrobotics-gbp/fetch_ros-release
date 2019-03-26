@@ -50,9 +50,8 @@ features:
         y: -0.0355
         z: 0.0396
   ground_plane_finder:
-    type: robot_calibration/PlaneFinder
+    type: robot_calibration/GroundPlaneFinder
     topic: /head_camera/depth_registered/points
     camera_sensor_name: camera
-    transform_frame: base_link
-    min_z: -2.0
-    max_z: 2.0
+    chain_sensor_name: ground
+    ground_frame: base_link

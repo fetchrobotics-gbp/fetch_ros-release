@@ -1,0 +1,12 @@
+Source: ros-indigo-fetch-ros
+Section: misc
+Priority: extra
+Maintainer: Alex Moriarty <amoriarty@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: https://docs.fetchrobotics.com/
+Standards-Version: 3.9.2
+
+Package: ros-indigo-fetch-ros
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-fetch-calibration, ros-indigo-fetch-depth-layer, ros-indigo-fetch-description, ros-indigo-fetch-ikfast-plugin, ros-indigo-fetch-maps, ros-indigo-fetch-moveit-config, ros-indigo-fetch-navigation, ros-indigo-fetch-teleop
+Description: Fetch ROS, packages for working with Fetch and Freight

@@ -1,0 +1,222 @@
+ros-kinetic-fetch-moveit-config (0.7.15-0xenial) xenial; urgency=high
+
+  * [Docs] Add URL tags to package for wiki.ros.org (backport) (#91 <https://github.com/fetchrobotics/fetch_ros/issues/91>)
+  * Contributors: Alexander Moriarty
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 26 Mar 2019 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.14-0xenial) xenial; urgency=high
+
+  * updates ownership
+  * Contributors: Russell Toris
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.13-0xenial) xenial; urgency=high
+
+  * add apply_planning_scene
+  * [moveit_config] Add CHOMP planner demo launch.
+    Enabling CHOMP on RViz by following the [tutorial](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/chomp_interface_tutorial.html) (which currently included false information. I'll open a PR right after this).
+    Tested on Xenial-Kinetic
+    This commit is not necessarily intended to merged in. But would be nice to be kept for the entire MoveIt! community as a reference if possible. At least this will remain on the fork of @130s.
+    *This PR is sponsored by [PlusOne Robotics](http://plusonerobotics.com) as part of [World MoveIt! Day 2017 hackathon](http://moveit.ros.org/events/world-moveit-day-2017)*
+  * Contributors: Isaac I.Y. Saito, Shingo Kitagawa
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 02 Nov 2017 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.12-0xenial) xenial; urgency=high
+
+  * add dependency for moveit
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 02 Aug 2017 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.11-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 31 Jul 2017 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.10-0xenial) xenial; urgency=high
+
+  * update package.xmls, add depend on fetch_ikfast_plugin
+  * load the ikfast kinematics plugin
+  * Contributors: Di Sun, Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.9-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.8-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.7-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.6-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.5-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.4-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.3-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.2-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.1-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.7.0-0xenial) xenial; urgency=high
+
+  * fix dependency issue with run/test duplication
+  * add missing moveit_python depend
+  * fix name of gripper fingers in fake controllers
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.6.2-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.6.1-0xenial) xenial; urgency=high
+
+  * add (optional) octomap configuration
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.6.0-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.14-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.13-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.12-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.11-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.10-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.9-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.8-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.7-0xenial) xenial; urgency=high
+
+  * bump joint limits used for moveit
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.6-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.5-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.4-0xenial) xenial; urgency=high
+
+  * repository cleanup
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 09 May 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.3-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 03 May 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.2-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 19 Apr 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.1-0xenial) xenial; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 09 Apr 2015 07:00:00 -0000
+
+ros-kinetic-fetch-moveit-config (0.5.0-0xenial) xenial; urgency=high
+
+  * First public release
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 04 Apr 2015 07:00:00 -0000
+
+

@@ -1,3 +1,35 @@
+## fetch_ros (kinetic) - 0.7.15-0
+
+The packages in the `fetch_ros` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release fetch_ros --track kinetic --rosdistro kinetic --new-track` on `Tue, 26 Mar 2019 21:35:31 -0000`
+
+These packages were released:
+- `fetch_calibration`
+- `fetch_depth_layer`
+- `fetch_description`
+- `fetch_ikfast_plugin`
+- `fetch_maps`
+- `fetch_moveit_config`
+- `fetch_navigation`
+- `fetch_ros`
+- `fetch_teleop`
+
+Version of package(s) in repository `fetch_ros`:
+
+- upstream repository: git@github.com:fetchrobotics/fetch_ros.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.7.15-0`
+
+Versions of tools used:
+
+- bloom version: `0.7.2`
+- catkin_pkg version: `0.4.11`
+- rosdep version: `0.15.1`
+- rosdistro version: `0.7.2`
+- vcstools version: `0.1.40`
+
+
 ## fetch_ros (indigo) - 0.7.15-0
 
 The packages in the `fetch_ros` repository were released into the `indigo` distro by running `/usr/bin/bloom-release fetch_ros --track indigo --rosdistro indigo` on `Tue, 26 Mar 2019 21:27:08 -0000`

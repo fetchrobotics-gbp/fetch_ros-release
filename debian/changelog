@@ -1,0 +1,14 @@
+ros-kinetic-fetch-ros (0.7.15-0xenial) xenial; urgency=high
+
+  * [fetch_ros] new meta-package (backport #110 <https://github.com/fetchrobotics/fetch_ros/issues/110>) (#111 <https://github.com/fetchrobotics/fetch_ros/issues/111>)
+  * Contributors: Alexander Moriarty
+
+ -- Alex Moriarty <amoriarty@fetchrobotics.com>  Tue, 26 Mar 2019 07:00:00 -0000
+
+ros-kinetic-fetch-ros (0.7.14-0xenial) xenial; urgency=high
+
+  * Meta-package fetch_ros was newly added after 0.7.14
+
+ -- Alex Moriarty <amoriarty@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+

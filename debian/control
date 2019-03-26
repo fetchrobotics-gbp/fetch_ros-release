@@ -1,0 +1,12 @@
+Source: ros-kinetic-fetch-ros
+Section: misc
+Priority: extra
+Maintainer: Alex Moriarty <amoriarty@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin
+Homepage: https://docs.fetchrobotics.com/
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-fetch-ros
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-fetch-calibration, ros-kinetic-fetch-depth-layer, ros-kinetic-fetch-description, ros-kinetic-fetch-ikfast-plugin, ros-kinetic-fetch-maps, ros-kinetic-fetch-moveit-config, ros-kinetic-fetch-navigation, ros-kinetic-fetch-teleop
+Description: Fetch ROS, packages for working with Fetch and Freight

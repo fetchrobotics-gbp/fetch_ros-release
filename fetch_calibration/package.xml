@@ -1,6 +1,7 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>fetch_calibration</name>
-  <version>0.7.15</version>
+  <version>0.8.1</version>
   <description>
     Launch and configuration files for calibrating Fetch using the 'robot_calibration' package.
   </description>
@@ -17,5 +18,5 @@
   
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend version_gte="0.5.1">robot_calibration</run_depend>
+  <exec_depend version_gte="0.5.1">robot_calibration</exec_depend>
 </package>

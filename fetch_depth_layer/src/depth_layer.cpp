@@ -28,9 +28,10 @@
 
 // Author: Anuj Pasricha, Michael Ferguson
 
-#include <pluginlib/class_list_macros.h>
+#include <pluginlib/class_list_macros.hpp>
 #include <fetch_depth_layer/depth_layer.h>
 #include <limits>
+#include <geometry_msgs/Vector3Stamped.h>
 
 PLUGINLIB_EXPORT_CLASS(costmap_2d::FetchDepthLayer, costmap_2d::Layer)
 
@@ -143,8 +144,8 @@ void FetchDepthLayer::onInitialize()
     camera_info_topic, 10, &FetchDepthLayer::cameraInfoCallback, this);
 
   depth_image_sub_.reset(new message_filters::Subscriber<sensor_msgs::Image>(private_nh, camera_depth_topic, 10));
-  depth_image_filter_ = boost::shared_ptr< tf::MessageFilter<sensor_msgs::Image> >(
-    new tf::MessageFilter<sensor_msgs::Image>(*depth_image_sub_, *tf_, global_frame_, 10));
+  depth_image_filter_ = boost::shared_ptr< tf2_ros::MessageFilter<sensor_msgs::Image> >(
+    new tf2_ros::MessageFilter<sensor_msgs::Image>(*depth_image_sub_, *tf_, global_frame_, 10, private_nh));
   depth_image_filter_->registerCallback(boost::bind(&FetchDepthLayer::depthImageCallback, this, _1));
   observation_subscribers_.push_back(depth_image_sub_);
   observation_notifiers_.push_back(depth_image_filter_);
@@ -232,10 +233,10 @@ void FetchDepthLayer::depthImageCallback(
     // Get normals
     if (normals_estimator_.empty())
     {
-      normals_estimator_ = new RgbdNormals(cv_ptr->image.rows,
-                                           cv_ptr->image.cols,
-                                           cv_ptr->image.depth(),
-                                           K_);
+      normals_estimator_.reset(new RgbdNormals(cv_ptr->image.rows,
+                                               cv_ptr->image.cols,
+                                               cv_ptr->image.depth(),
+                                               K_));
     }
     cv::Mat normals;
     (*normals_estimator_)(points3d, normals);
@@ -243,7 +244,6 @@ void FetchDepthLayer::depthImageCallback(
     // Find plane(s)
     if (plane_estimator_.empty())
     {
-#if CV_MAJOR_VERSION == 3
       plane_estimator_.reset(new RgbdPlane());
       // Model parameters are based on notes in opencv_candidate
       plane_estimator_->setSensorErrorA(0.0075);
@@ -255,19 +255,6 @@ void FetchDepthLayer::depthImageCallback(
       plane_estimator_->setThreshold(observations_threshold_);
       // Minimum cluster size to be a plane
       plane_estimator_->setMinSize(1000);
-#else
-      plane_estimator_ = cv::Algorithm::create<RgbdPlane>("RGBD.RgbdPlane");
-      // Model parameters are based on notes in opencv_candidate
-      plane_estimator_->set("sensor_error_a", 0.0075);
-      plane_estimator_->set("sensor_error_b", 0.0);
-      plane_estimator_->set("sensor_error_c", 0.0);
-      // Image/cloud height/width must be multiple of block size
-      plane_estimator_->set("block_size", 40);
-      // Distance a point can be from plane and still be part of it
-      plane_estimator_->set("threshold", observations_threshold_);
-      // Minimum cluster size to be a plane
-      plane_estimator_->set("min_size", 1000);
-#endif
     }
     cv::Mat planes_mask;
     std::vector<cv::Vec4f> plane_coefficients;
@@ -289,16 +276,26 @@ void FetchDepthLayer::depthImageCallback(
   {
     // find ground plane in camera coordinates using tf
     // transform normal axis
-    tf::Stamped<tf::Vector3> vector(tf::Vector3(0, 0, 1), ros::Time(0), "base_link");
-    tf_->transformVector(msg->header.frame_id, vector, vector);
-    ground_plane[0] = vector.getX();
-    ground_plane[1] = vector.getY();
-    ground_plane[2] = vector.getZ();
+    geometry_msgs::Vector3Stamped vector;
+    vector.vector.x = 0;
+    vector.vector.y = 0;
+    vector.vector.z = 1;
+    vector.header.frame_id = "base_link";
+    vector.header.stamp = ros::Time();
+    tf_->transform(vector, vector, msg->header.frame_id);
+    ground_plane[0] = vector.vector.x;
+    ground_plane[1] = vector.vector.y;
+    ground_plane[2] = vector.vector.z;
 
     // find offset
-    tf::StampedTransform transform;
-    tf_->lookupTransform("base_link", msg->header.frame_id, ros::Time(0), transform);
-    ground_plane[3] = transform.getOrigin().getZ();
+    geometry_msgs::TransformStamped transform;
+    try {
+      transform = tf_->lookupTransform("base_link", msg->header.frame_id, msg->header.stamp);
+      ground_plane[3] = transform.transform.translation.z;
+    } catch (tf2::TransformException){
+      ROS_WARN("Failed to lookup transform!");
+      return;
+    }
   }
 
   // check that ground plane actually exists, so it doesn't count as marking observations

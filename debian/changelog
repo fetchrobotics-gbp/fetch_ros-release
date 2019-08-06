@@ -1,0 +1,250 @@
+ros-melodic-fetch-calibration (0.8.2-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 06 Aug 2019 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.8.1-1stretch) stretch; urgency=high
+
+  * sync cmake_minimum_required: 2.8.12
+  * Contributors: Alexander Moriarty
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 04 Apr 2019 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.8.0-1stretch) stretch; urgency=high
+
+  * [package.xml] REP-140 package format 2 (#104 <https://github.com/fetchrobotics/fetch_ros/issues/104>)
+    closes #83 <https://github.com/fetchrobotics/fetch_ros/issues/83>
+  * Merge pull request #100 <https://github.com/fetchrobotics/fetch_ros/issues/100> from aparker-fetch/distro-agnostic-calibration
+    removed hardcoded ROS distro from calibrate_robot
+  * removed hardcoded ROS distro from calibrate_robot
+  * [Fetch Calibration] fix syntax error (#96 <https://github.com/fetchrobotics/fetch_ros/issues/96>)
+    Noticed here https://index.ros.org/stats/errors/
+    Failed to parse launchfile launch/capture_manual.launch:
+    Missing end tag for 'rosparam' (got "launch")
+    Line: 16 Position: 668 Last 80 unconsumed characters:
+  * [Docs] Add URL tags to package for wiki.ros.org (#90 <https://github.com/fetchrobotics/fetch_ros/issues/90>)
+    The <url> tag is required to automatically fill in at least some info
+    on the wiki pages. The extra tags will create links to our docs.
+  * Merge pull request #81 <https://github.com/fetchrobotics/fetch_ros/issues/81> from moriarty/tf2-nav-melodic-devel
+    [fetch_depth_layer][tf2] fixes for upstream navigation
+    Changes for compatibility with ros-planning/navigation#755 <https://github.com/ros-planning/navigation/issues/755>
+  * (fetch_calibration) updates for new finders
+  * Contributors: Alex Moriarty, Andrew Parker, Eric Relson, Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 13 Feb 2019 08:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.14-1stretch) stretch; urgency=high
+
+  * updates ownership
+  * Contributors: Russell Toris
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.13-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 02 Nov 2017 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.12-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 02 Aug 2017 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.11-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 31 Jul 2017 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.10-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.9-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.8-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.7-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.6-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.5-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.4-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.3-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.2-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.1-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-melodic-fetch-calibration (0.7.0-1stretch) stretch; urgency=high
+
+  * added support for ground plane calibration
+  * Contributors: Niharika Arora
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.6.2-1stretch) stretch; urgency=high
+
+  * fix parameter delete
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.6.1-1stretch) stretch; urgency=high
+
+  * delete old parameters before reloading
+  * use dated temp files to avoid permissions issues, fixes #9 <https://github.com/fetchrobotics/fetch_ros/issues/9>
+  * specify camera/chain names
+  * add checkboard based calibration config
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.6.0-1stretch) stretch; urgency=high
+
+  * update capture for new multi_sensor branch of calibration
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.14-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.13-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.12-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.11-1stretch) stretch; urgency=high
+
+  * Update calibration poses bag file
+  * Contributors: varunns
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.10-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.9-1stretch) stretch; urgency=high
+
+  * fix head camera parameter names
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.8-1stretch) stretch; urgency=high
+
+  * add script for disabling auto exposure/whitebalance of head camera
+  * update calibration config
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.7-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.6-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.5-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.4-1stretch) stretch; urgency=high
+
+  * repository cleanup
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 09 May 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.3-1stretch) stretch; urgency=high
+
+  * add launch file argument for velocity_factor
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 03 May 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.2-1stretch) stretch; urgency=high
+
+  * update calibration configuration
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sun, 19 Apr 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.1-1stretch) stretch; urgency=high
+
+
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Thu, 09 Apr 2015 07:00:00 -0000
+
+ros-melodic-fetch-calibration (0.5.0-1stretch) stretch; urgency=high
+
+  * First public release
+  * Contributors: Michael Ferguson
+
+ -- Russell Toris <rtoris@fetchrobotics.com>  Sat, 04 Apr 2015 07:00:00 -0000
+
+

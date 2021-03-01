@@ -1,0 +1,12 @@
+Source: ros-noetic-fetch-ros
+Section: misc
+Priority: optional
+Maintainer: Sarah Elliott <selliott@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin
+Homepage: https://docs.fetchrobotics.com/
+Standards-Version: 3.9.2
+
+Package: ros-noetic-fetch-ros
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-fetch-calibration, ros-noetic-fetch-depth-layer, ros-noetic-fetch-description, ros-noetic-fetch-ikfast-plugin, ros-noetic-fetch-maps, ros-noetic-fetch-moveit-config, ros-noetic-fetch-navigation, ros-noetic-fetch-teleop
+Description: Fetch ROS, packages for working with Fetch and Freight

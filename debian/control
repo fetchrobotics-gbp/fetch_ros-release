@@ -1,0 +1,12 @@
+Source: ros-noetic-fetch-calibration
+Section: misc
+Priority: optional
+Maintainer: Eric Relson <erelson@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), python3-setuptools, ros-noetic-catkin
+Homepage: http://docs.fetchrobotics.com/calibration.html
+Standards-Version: 3.9.2
+
+Package: ros-noetic-fetch-calibration
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-robot-calibration (>= 0.5.1)
+Description: Launch and configuration files for calibrating Fetch using the 'robot_calibration' package.

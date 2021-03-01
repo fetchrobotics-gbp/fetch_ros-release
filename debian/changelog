@@ -1,0 +1,258 @@
+ros-noetic-fetch-moveit-config (0.9.0-1buster) buster; urgency=high
+
+  * Initial noetic release
+  * Updates maintainers
+  * Contributors: Eric Relson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 28 Feb 2021 08:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.8.2-1buster) buster; urgency=high
+
+  * Fixed chomp configuration for porting to moveit melodic-devel (#124 <https://github.com/fetchrobotics/fetch_ros/issues/124>)
+  * Merge pull request #122 <https://github.com/fetchrobotics/fetch_ros/issues/122> from dekent/melodic-devel
+    Much more collision checking = much safer robot with minimal planning time increases
+  * Merge pull request #116 <https://github.com/fetchrobotics/fetch_ros/issues/116> from umhan35/moveit-costomap
+    [moveit_config] allow moveit octomap params to be overridden
+  * add default moveit_octomap_sensor_params_file to move_group.launch
+  * allow moveit octomap params to be overridden
+  * Contributors: Carl Saldanha, David Kent, Yuma Hijioka, Zhao Han
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Tue, 06 Aug 2019 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.8.1-1buster) buster; urgency=high
+
+  * sync cmake_minimum_required: 2.8.12
+  * Merge pull request #107 <https://github.com/fetchrobotics/fetch_ros/issues/107> from moriarty/update-ikfast-plugin
+    [IKFast Plugin] Regenerate fetch_ikfast_plugin
+    Fixes #103 <https://github.com/fetchrobotics/fetch_ros/issues/103>
+  * Contributors: Alexander Moriarty, Carl Saldanha
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 04 Apr 2019 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.8.0-1buster) buster; urgency=high
+
+  * [package.xml] REP-140 package format 2 (#104 <https://github.com/fetchrobotics/fetch_ros/issues/104>)
+    closes #83 <https://github.com/fetchrobotics/fetch_ros/issues/83>
+  * [MoveIt][Melodic]: MoveGroupExecuteService -> MoveGroupExecuteTrajectoryAction (#94 <https://github.com/fetchrobotics/fetch_ros/issues/94>)
+  * [Docs] Add URL tags to package for wiki.ros.org (#90 <https://github.com/fetchrobotics/fetch_ros/issues/90>)
+    The <url> tag is required to automatically fill in at least some info
+    on the wiki pages. The extra tags will create links to our docs.
+  * Contributors: Alex Moriarty, ivandariojr
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 13 Feb 2019 08:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.14-1buster) buster; urgency=high
+
+  * updates ownership
+  * Contributors: Russell Toris
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.13-1buster) buster; urgency=high
+
+  * add apply_planning_scene
+  * [moveit_config] Add CHOMP planner demo launch.
+    Enabling CHOMP on RViz by following the [tutorial](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/chomp_interface_tutorial.html) (which currently included false information. I'll open a PR right after this).
+    Tested on Xenial-Kinetic
+    This commit is not necessarily intended to merged in. But would be nice to be kept for the entire MoveIt! community as a reference if possible. At least this will remain on the fork of @130s.
+    *This PR is sponsored by [PlusOne Robotics](http://plusonerobotics.com) as part of [World MoveIt! Day 2017 hackathon](http://moveit.ros.org/events/world-moveit-day-2017)*
+  * Contributors: Isaac I.Y. Saito, Shingo Kitagawa
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 02 Nov 2017 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.12-1buster) buster; urgency=high
+
+  * add dependency for moveit
+  * Contributors: Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 02 Aug 2017 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.11-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Mon, 31 Jul 2017 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.10-1buster) buster; urgency=high
+
+  * update package.xmls, add depend on fetch_ikfast_plugin
+  * load the ikfast kinematics plugin
+  * Contributors: Di Sun, Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.9-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.8-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.7-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.6-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.5-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.4-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.3-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.2-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.1-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.7.0-1buster) buster; urgency=high
+
+  * fix dependency issue with run/test duplication
+  * add missing moveit_python depend
+  * fix name of gripper fingers in fake controllers
+  * Contributors: Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.6.2-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.6.1-1buster) buster; urgency=high
+
+  * add (optional) octomap configuration
+  * Contributors: Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.6.0-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.14-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.13-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.12-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.11-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.10-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.9-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.8-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.7-1buster) buster; urgency=high
+
+  * bump joint limits used for moveit
+  * Contributors: Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.6-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.5-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.4-1buster) buster; urgency=high
+
+  * repository cleanup
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sat, 09 May 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.3-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 03 May 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.2-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sun, 19 Apr 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.1-1buster) buster; urgency=high
+
+
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Thu, 09 Apr 2015 07:00:00 -0000
+
+ros-noetic-fetch-moveit-config (0.5.0-1buster) buster; urgency=high
+
+  * First public release
+  * Contributors: Michael Ferguson
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sat, 04 Apr 2015 07:00:00 -0000
+
+

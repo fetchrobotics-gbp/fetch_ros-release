@@ -1,3 +1,35 @@
+## fetch_ros (noetic) - 0.9.0-1
+
+The packages in the `fetch_ros` repository were released into the `noetic` distro by running `/usr/local/bin/bloom-release fetch_ros --rosdistro noetic` on `Mon, 01 Mar 2021 00:21:03 -0000`
+
+These packages were released:
+- `fetch_calibration`
+- `fetch_depth_layer`
+- `fetch_description`
+- `fetch_ikfast_plugin`
+- `fetch_maps`
+- `fetch_moveit_config`
+- `fetch_navigation`
+- `fetch_ros`
+- `fetch_teleop`
+
+Version of package(s) in repository `fetch_ros`:
+
+- upstream repository: git@github.com:fetchrobotics/fetch_ros.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.9.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.1`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.19.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## fetch_ros (melodic) - 0.8.2-1
 
 The packages in the `fetch_ros` repository were released into the `melodic` distro by running `/usr/bin/bloom-release fetch_ros --track melodic --rosdistro melodic` on `Tue, 06 Aug 2019 22:05:48 -0000`

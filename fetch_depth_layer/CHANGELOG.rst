@@ -2,6 +2,13 @@
 Changelog for package fetch_depth_layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.9.0 (2021-02-28)
+------------------
+* Initial noetic release
+* Update OpenCV version for fetch_depth_layer
+* Updates maintainers
+* Contributors: Alex Moriarty, Eric Relson, Russell Toris
+
 0.8.2 (2019-08-06)
 ------------------
 

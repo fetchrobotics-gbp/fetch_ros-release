@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.0.2)
 project(fetch_depth_layer)
 
 find_package(catkin REQUIRED 
@@ -14,7 +14,7 @@ find_package(catkin REQUIRED
     nav_msgs
 )
 
-find_package(OpenCV 3.2 REQUIRED)
+find_package(OpenCV 4.2 REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS

@@ -1,0 +1,222 @@
+ros-noetic-fetch-navigation (0.9.0-1focal) focal; urgency=high
+
+  * Initial noetic release
+  * Updates for python3 and ROS Noetic
+  * Add use_map_topic arg in fetch_nav.launch (#145 <https://github.com/fetchrobotics/fetch_ros/issues/145>)
+  * Update bias/scale params (#141 <https://github.com/fetchrobotics/fetch_ros/issues/141>)
+    bias params are limited to 5.0, divided them all by 16
+    so that our bias distances are close to the defaults
+  * Add topicname args to navigation launch (#136 <https://github.com/fetchrobotics/fetch_ros/issues/136>)
+    * add topic args for navigation launch files
+  * Updates maintainers
+  * Contributors: Alex Moriarty, Eric Relson, Koki Shinjo, Michael Ferguson, Russell Toris, Shingo Kitagawa
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 28 Feb 2021 08:00:00 -0000
+
+ros-noetic-fetch-navigation (0.8.2-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 06 Aug 2019 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.8.1-1focal) focal; urgency=high
+
+  * sync cmake_minimum_required: 2.8.12
+  * Contributors: Alexander Moriarty
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 04 Apr 2019 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.8.0-1focal) focal; urgency=high
+
+  * [package.xml] REP-140 package format 2 (#104 <https://github.com/fetchrobotics/fetch_ros/issues/104>)
+    closes #83 <https://github.com/fetchrobotics/fetch_ros/issues/83>
+  * [Docs] Add URL tags to package for wiki.ros.org (#90 <https://github.com/fetchrobotics/fetch_ros/issues/90>)
+    The <url> tag is required to automatically fill in at least some info
+    on the wiki pages. The extra tags will create links to our docs.
+  * Contributors: Alex Moriarty
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 13 Feb 2019 08:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.14-1focal) focal; urgency=high
+
+  * updates ownership
+  * Merge pull request #76 <https://github.com/fetchrobotics/fetch_ros/issues/76> from 708yamaguchi/change-amcl-param
+    Localized position of fetch often jumps
+  * change odom model type and params for amcl
+  * Contributors: Derek, Naoya Yamaguchi, Russell Toris
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.13-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 02 Nov 2017 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.12-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 02 Aug 2017 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.11-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 31 Jul 2017 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.10-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.9-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.8-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.7-1focal) focal; urgency=high
+
+  * remove run_depend on metapackage
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.6-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.5-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.4-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.3-1focal) focal; urgency=high
+
+  * Update to new maps
+  * Contributors: Aaron Blasdel
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.2-1focal) focal; urgency=high
+
+  * Fix location of recovery behavior parameters in yaml configs
+  * Contributors: Kei Okada, Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.1-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-noetic-fetch-navigation (0.7.0-1focal) focal; urgency=high
+
+  * Use fetch_maps package for maps
+  * Allow overriding of move base & amcl param files
+  * Contributors: Aaron Blasdel, Ian Danforth
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.6.2-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.6.1-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.6.0-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.14-1focal) focal; urgency=high
+
+  * fetch_navigation depends fetch_depth_layer
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.13-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.12-1focal) focal; urgency=high
+
+  * Slam_karto node rename in launch
+  * Contributors: Aaron Blasdel
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.11-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.10-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.9-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.8-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.7-1focal) focal; urgency=high
+
+  * display whole global plan
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.6-1focal) focal; urgency=high
+
+  * remap static_map service for keepout server
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-navigation (0.5.5-1focal) focal; urgency=high
+
+  * import navigation
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+

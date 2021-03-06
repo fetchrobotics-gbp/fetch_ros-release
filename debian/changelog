@@ -1,0 +1,252 @@
+ros-noetic-fetch-depth-layer (0.9.1-1focal) focal; urgency=high
+
+  * Fixup: Remove version specification for OpenCV
+    Debian Buster only has 3.x available, while Ubuntu 20.04 has 4.x available.
+    This package works with either.
+  * Contributors: Eric Relson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 05 Mar 2021 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.9.0-1focal) focal; urgency=high
+
+  * Initial noetic release
+  * Update OpenCV version for fetch_depth_layer
+  * Updates maintainers
+  * Contributors: Alex Moriarty, Eric Relson, Russell Toris
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 28 Feb 2021 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.8.2-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 06 Aug 2019 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.8.1-1focal) focal; urgency=high
+
+  * sync cmake_minimum_required: 2.8.12
+  * [fetch_depth_layer][OpenCV-4] operator= compile error (#108)
+    
+    This fixes no match for ‘operator=’ error with OpenCV4 and how the cv::Ptr was being set.
+    Fixed by setting the normals_estimator_ pointer similarly to how the plane_estimator_ pointer is being set.
+    This closes #82
+  * [upstream change] pluginlib includes: h -> hpp (#106)
+    
+    pluginlib provided a script for this change, and it's been backported
+    to Indigo, Kinetic- but not Jade.
+  * Contributors: Alexander Moriarty
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 04 Apr 2019 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.8.0-1focal) focal; urgency=high
+
+  * [package.xml] REP-140 package format 2 (#104 <https://github.com/fetchrobotics/fetch_ros/issues/104>)
+    closes #83 <https://github.com/fetchrobotics/fetch_ros/issues/83>
+  * [Docs] Add URL tags to package for wiki.ros.org (#90 <https://github.com/fetchrobotics/fetch_ros/issues/90>)
+    The <url> tag is required to automatically fill in at least some info
+    on the wiki pages. The extra tags will create links to our docs.
+  * Merge pull request #81 <https://github.com/fetchrobotics/fetch_ros/issues/81> from moriarty/tf2-nav-melodic-devel
+    [fetch_depth_layer][tf2] fixes for upstream navigation
+    Changes for compatibility with ros-planning/navigation#755 <https://github.com/ros-planning/navigation/issues/755>
+  * [fetch_depth_layer][tf2] ros-planning/navigation#755 <https://github.com/ros-planning/navigation/issues/755>
+    Don't merge this until ros-planning/navigation#755 <https://github.com/ros-planning/navigation/issues/755>
+    Updates fetch_depth_layer for tf2 changes coming upstream.
+  * Merge pull request #80 <https://github.com/fetchrobotics/fetch_ros/issues/80> from moriarty/opencv3-runtime-symbols-not-found
+    [Depth Layer] Fixes OpenCV3 symbol lookup error
+    Originally we depended on opencv_candidate which found the OpenCV libs for us.
+  * Merge pull request #78 <https://github.com/fetchrobotics/fetch_ros/issues/78> from fetchrobotics/build-on-melodic
+    fetch_depth_layer is now full OpenCV3 support
+  * Contributors: Alex Moriarty, Alexander Moriarty, Russell Toris
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 13 Feb 2019 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.14-1focal) focal; urgency=high
+
+  * updates ownership
+  * Contributors: Russell Toris
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 10 Jul 2018 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.13-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 02 Nov 2017 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.12-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 02 Aug 2017 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.11-1focal) focal; urgency=high
+
+  * scoped 'isnan' with 'std'
+    Fixes compilation errors while compiling with c++11 flags
+  * Contributors: Priyam Parashar
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 31 Jul 2017 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.10-1focal) focal; urgency=high
+
+  * updates to handle OpenCV3 changes
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 27 Oct 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.9-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 26 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.8-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 18 Jul 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.7-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Mon, 20 Jun 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.6-1focal) focal; urgency=high
+
+  * Allow FetchDepthLayer to send empty clouds
+    This keeps the "current"-ness of observationbuffers up-to-date even when
+    sensors return zero points due to being in a large open area.
+  * Contributors: Aaron Hoy
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 26 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.5-1focal) focal; urgency=high
+
+  * Fixed activate and deactivate to avoid errors
+  * Parameterizing inputs for ObservationBuffer to match parent layers.
+  * Contributors: Aaron Hoy, Alex Henning, Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 08 May 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.4-1focal) focal; urgency=high
+
+  * activate/deactivate for fetch depth layer
+  * Added transform filtering to depth layer depth data callback
+  * Contributors: Levon Avagyan
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 16 Mar 2016 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.3-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sat, 05 Mar 2016 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.2-1focal) focal; urgency=high
+
+  * Add option to clear with NANs
+  * Add ROS param clear_with_skipped_rays to re-enable clearing with edge rays
+  * Add ROS param to control size of skip region on edges
+  * Change min_clearing_height to -infinity
+  * Change max_clearing_height to +infinity
+  * Contributors: Aaron Hoy, Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 24 Feb 2016 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.1-1focal) focal; urgency=high
+
+  * add parameters for topic names
+  * add support for static camera based on tf transform
+  * Improved local costmap clearing by considering all points for clearance.
+  * re-license fetch_depth_layer as BSD
+  * Contributors: Marek Fiser, Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 20 Jan 2016 08:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.7.0-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 29 Sep 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.6.2-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 30 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.6.1-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 03 Jul 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.6.0-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Tue, 23 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.14-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 19 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.13-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sat, 13 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.12-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 12 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.11-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 10 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.10-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.9-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.8-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Sun, 07 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.7-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Fri, 05 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.6-1focal) focal; urgency=high
+
+
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Thu, 04 Jun 2015 07:00:00 -0000
+
+ros-noetic-fetch-depth-layer (0.5.5-1focal) focal; urgency=high
+
+  * release fetch_depth_layer
+  * Contributors: Michael Ferguson
+
+ -- Carl Saldanha <csaldanha@fetchrobotics.com>  Wed, 03 Jun 2015 07:00:00 -0000
+
+

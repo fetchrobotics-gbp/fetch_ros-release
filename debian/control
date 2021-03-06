@@ -1,0 +1,12 @@
+Source: ros-noetic-fetch-moveit-config
+Section: misc
+Priority: optional
+Maintainer: Sarah Elliott <selliott@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-fetch-description, ros-noetic-rostest
+Homepage: http://moveit.ros.org/
+Standards-Version: 3.9.2
+
+Package: ros-noetic-fetch-moveit-config
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-fetch-description, ros-noetic-fetch-ikfast-plugin, ros-noetic-joint-state-publisher, ros-noetic-moveit-fake-controller-manager, ros-noetic-moveit-kinematics, ros-noetic-moveit-planners-ompl, ros-noetic-moveit-python, ros-noetic-moveit-ros-move-group, ros-noetic-moveit-ros-visualization, ros-noetic-moveit-simple-controller-manager, ros-noetic-robot-state-publisher, ros-noetic-rospy, ros-noetic-xacro
+Description: An automatically generated package with all the configuration and launch files for using the fetch_urdf with the MoveIt Motion Planning Framework

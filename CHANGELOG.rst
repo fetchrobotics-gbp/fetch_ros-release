@@ -2,6 +2,9 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.9.1 (2021-03-05)
+------------------
+
 0.9.0 (2021-02-28)
 ------------------
 * Initial noetic release

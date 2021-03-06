@@ -1,0 +1,12 @@
+Source: ros-noetic-fetch-depth-layer
+Section: misc
+Priority: optional
+Maintainer: Carl Saldanha <csaldanha@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-costmap-2d, ros-noetic-cv-bridge, ros-noetic-geometry-msgs, ros-noetic-image-transport, ros-noetic-nav-msgs, ros-noetic-pluginlib, ros-noetic-roscpp, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
+Homepage: http://docs.fetchrobotics.com/perception.html
+Standards-Version: 3.9.2
+
+Package: ros-noetic-fetch-depth-layer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-costmap-2d, ros-noetic-cv-bridge, ros-noetic-geometry-msgs, ros-noetic-image-transport, ros-noetic-nav-msgs, ros-noetic-pluginlib, ros-noetic-roscpp, ros-noetic-sensor-msgs, ros-noetic-tf2-ros
+Description: The fetch_depth_layer package

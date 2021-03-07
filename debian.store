@@ -1,1 +1,1 @@
-{"trim": "", "base": "773b85a7", "trimbase": "", "parent": "debian/melodic/fetch_moveit_config", "previous": "d272f86f"}
+{"base": "59a12a66", "parent": "debian/melodic/fetch_moveit_config", "previous": "f646d0f8", "trim": "", "trimbase": ""}

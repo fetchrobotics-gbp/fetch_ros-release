@@ -1,0 +1,30 @@
+ros-melodic-fetch-ros (0.8.3-1bionic) bionic; urgency=high
+
+  * Initial noetic release
+  * Updates maintainers
+  * Contributors: Alex Moriarty, Russell Toris
+
+ -- Sarah Elliott <selliott@fetchrobotics.com>  Sat, 06 Mar 2021 08:00:00 -0000
+
+ros-melodic-fetch-ros (0.8.2-1bionic) bionic; urgency=high
+
+
+
+ -- Alex Moriarty <amoriarty@fetchrobotics.com>  Tue, 06 Aug 2019 07:00:00 -0000
+
+ros-melodic-fetch-ros (0.8.1-1bionic) bionic; urgency=high
+
+  * catkin_make only supports cmake 2.8.3 for meta-pkg (#115 <https://github.com/fetchrobotics/fetch_ros/issues/115>)
+  * sync cmake_minimum_required: 2.8.12
+  * [fetch_ros] new meta-package (#110 <https://github.com/fetchrobotics/fetch_ros/issues/110>)
+  * Contributors: Alexander Moriarty
+
+ -- Alex Moriarty <amoriarty@fetchrobotics.com>  Thu, 04 Apr 2019 07:00:00 -0000
+
+ros-melodic-fetch-ros (0.8.0-1bionic) bionic; urgency=high
+
+  * Meta-package fetch_ros was newly added after 0.8.0
+
+ -- Alex Moriarty <amoriarty@fetchrobotics.com>  Wed, 13 Feb 2019 08:00:00 -0000
+
+

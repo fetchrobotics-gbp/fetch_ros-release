@@ -1,0 +1,12 @@
+Source: ros-melodic-fetch-ikfast-plugin
+Section: misc
+Priority: optional
+Maintainer: Sarah Elliott <selliott@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), liblapack-dev, ros-melodic-catkin, ros-melodic-eigen-conversions, ros-melodic-moveit-core, ros-melodic-pluginlib, ros-melodic-roscpp, ros-melodic-tf2-eigen, ros-melodic-tf2-kdl
+Homepage: http://docs.fetchrobotics.com/manipulation.html
+Standards-Version: 3.9.2
+
+Package: ros-melodic-fetch-ikfast-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblapack-dev, ros-melodic-eigen-conversions, ros-melodic-moveit-core, ros-melodic-pluginlib, ros-melodic-roscpp
+Description: Kinematics plugin for Fetch robot, generated through IKFast

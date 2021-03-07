@@ -1,0 +1,12 @@
+Source: ros-melodic-fetch-depth-layer
+Section: misc
+Priority: optional
+Maintainer: Carl Saldanha <csaldanha@fetchrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-costmap-2d, ros-melodic-cv-bridge, ros-melodic-geometry-msgs, ros-melodic-image-transport, ros-melodic-nav-msgs, ros-melodic-pluginlib, ros-melodic-roscpp, ros-melodic-sensor-msgs, ros-melodic-tf2-ros
+Homepage: http://docs.fetchrobotics.com/perception.html
+Standards-Version: 3.9.2
+
+Package: ros-melodic-fetch-depth-layer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-costmap-2d, ros-melodic-cv-bridge, ros-melodic-geometry-msgs, ros-melodic-image-transport, ros-melodic-nav-msgs, ros-melodic-pluginlib, ros-melodic-roscpp, ros-melodic-sensor-msgs, ros-melodic-tf2-ros
+Description: The fetch_depth_layer package

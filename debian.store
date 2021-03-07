@@ -1,1 +1,1 @@
-{"trim": "", "base": "5680e431", "trimbase": "", "parent": "debian/melodic/fetch_ros", "previous": "250744d3"}
+{"base": "80600d0e", "parent": "debian/melodic/fetch_ros", "previous": "93a5d032", "trim": "", "trimbase": ""}

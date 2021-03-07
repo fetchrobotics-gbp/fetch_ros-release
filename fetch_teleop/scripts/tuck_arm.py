@@ -29,14 +29,17 @@
 # Author: Michael Ferguson
 
 import argparse
+import os
 import subprocess
 import sys
 from threading import Thread
 
+import rospkg
 import rospy
 from sensor_msgs.msg import Joy
-from moveit_msgs.msg import MoveItErrorCodes, PlanningScene
+from geometry_msgs.msg import Pose
 from moveit_python import MoveGroupInterface, PlanningSceneInterface
+from moveit_msgs.msg import MoveItErrorCodes, PlanningScene
 
 class MoveItThread(Thread):
 
@@ -53,7 +56,10 @@ class MoveItThread(Thread):
         self.process.wait()
 
 def is_moveit_running():
-    output = subprocess.check_output(["rosnode", "info", "move_group"], stderr=subprocess.STDOUT)
+    try:
+        output = subprocess.check_output(["rosnode", "info", "move_group"], stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+        output = e.output
     if output.find("unknown node") >= 0:
         return False
     if output.find("Communication with node") >= 0:
@@ -72,6 +78,8 @@ class TuckThread(Thread):
         if not is_moveit_running():
             rospy.loginfo("starting moveit")
             move_thread = MoveItThread()
+        else:
+            rospy.loginfo("moveit already started")
 
         rospy.loginfo("Waiting for MoveIt...")
         self.client = MoveGroupInterface("arm_with_torso", "base_link")
@@ -80,7 +88,18 @@ class TuckThread(Thread):
         # Padding does not work (especially for self collisions)
         # So we are adding a box above the base of the robot
         scene = PlanningSceneInterface("base_link")
-        scene.addBox("keepout", 0.2, 0.5, 0.05, 0.15, 0.0, 0.375)
+        keepout_pose = Pose()
+        keepout_pose.position.z = 0.375
+        keepout_pose.orientation.w = 1.0
+        ground_pose = Pose()
+        ground_pose.position.z = -0.03
+        ground_pose.orientation.w = 1.0
+        rospack = rospkg.RosPack()
+        mesh_dir = os.path.join(rospack.get_path('fetch_teleop'), 'mesh')
+        scene.addMesh(
+            'keepout', keepout_pose, os.path.join(mesh_dir, 'keepout.stl'))
+        scene.addMesh(
+            'ground', ground_pose, os.path.join(mesh_dir, 'ground.stl'))
 
         joints = ["torso_lift_joint", "shoulder_pan_joint", "shoulder_lift_joint", "upperarm_roll_joint",
                   "elbow_flex_joint", "forearm_roll_joint", "wrist_flex_joint", "wrist_roll_joint"]
@@ -92,6 +111,7 @@ class TuckThread(Thread):
                                                      max_velocity_scaling_factor=0.5)
             if result and result.error_code.val == MoveItErrorCodes.SUCCESS:
                 scene.removeCollisionObject("keepout")
+                scene.removeCollisionObject("ground")
                 if move_thread:
                     move_thread.stop()
 

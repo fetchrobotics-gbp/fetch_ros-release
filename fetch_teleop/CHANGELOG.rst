@@ -2,21 +2,16 @@
 Changelog for package fetch_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.9.1 (2021-03-05)
-------------------
-
-0.9.0 (2021-02-28)
+0.8.3 (2021-03-06)
 ------------------
 * Initial noetic release
-* Update maintainers
-* Use mesh for tuck arm collision
-* Move collision objects to avoid collision
-* Fix tuck_arm.py moveit check
-* Updates for python3 and ROS Noetic
+* Fix tuck arm moveit check [OPEN-48] (`#150 <https://github.com/fetchrobotics/fetch_ros/issues/150>`_)
 * Tuck arm script: Add ground collision for melodic (`#130 <https://github.com/fetchrobotics/fetch_ros/issues/130>`_)
+and (`#132 <https://github.com/fetchrobotics/fetch_ros/issues/132>`_)
   * add ground as collision object
-  * make robot base keepout larger
-* Contributors: Alex Moriarty, Eric Relson, Russell Toris, Shingo Kitagawa
+  * use mesh for tuck arm collision
+* Updates maintainers
+* Contributors: Alex Moriarty, Jeff Wilson, Russell Toris, Shingo Kitagawa
 
 0.8.2 (2019-08-06)
 ------------------

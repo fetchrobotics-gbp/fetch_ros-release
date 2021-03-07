@@ -2,21 +2,15 @@
 Changelog for package fetch_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.9.1 (2021-03-05)
-------------------
-
-0.9.0 (2021-02-28)
+0.8.3 (2021-03-06)
 ------------------
 * Initial noetic release
-* Updates for python3 and ROS Noetic
+* Add launch_map_server argument in fetch_nav.launch (`#147 <https://github.com/fetchrobotics/fetch_ros/issues/147>`_)
 * Add use_map_topic arg in fetch_nav.launch (`#145 <https://github.com/fetchrobotics/fetch_ros/issues/145>`_)
 * Update bias/scale params (`#141 <https://github.com/fetchrobotics/fetch_ros/issues/141>`_)
-  bias params are limited to 5.0, divided them all by 16
-  so that our bias distances are close to the defaults
 * Add topicname args to navigation launch (`#136 <https://github.com/fetchrobotics/fetch_ros/issues/136>`_)
-  * add topic args for navigation launch files
 * Updates maintainers
-* Contributors: Alex Moriarty, Eric Relson, Koki Shinjo, Michael Ferguson, Russell Toris, Shingo Kitagawa
+* Contributors: Alex Moriarty, Koki Shinjo, Michael Ferguson, Russell Toris, Shingo Kitagawa
 
 0.8.2 (2019-08-06)
 ------------------

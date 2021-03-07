@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright (c) 2015-2020, Fetch Robotics Inc.
+# Copyright (c) 2015, Fetch Robotics Inc.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Author: Michael Ferguson, Eric Relson
+# Author: Michael Ferguson
 
 import argparse
 import os
@@ -40,7 +40,6 @@ from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Pose
 from moveit_python import MoveGroupInterface, PlanningSceneInterface
 from moveit_msgs.msg import MoveItErrorCodes, PlanningScene
-
 
 class MoveItThread(Thread):
 
@@ -59,13 +58,11 @@ class MoveItThread(Thread):
 def is_moveit_running():
     try:
         output = subprocess.check_output(["rosnode", "info", "move_group"], stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError:
+    except subprocess.CalledProcessError as e:
+        output = e.output
+    if output.find("unknown node") >= 0:
         return False
-    if isinstance(output, bytes):
-        output = output.decode('utf-8')
-    if "unknown node" in output:
-        return False
-    if "Communication with node" in output:
+    if output.find("Communication with node") >= 0:
         return False
     return True
 
@@ -79,10 +76,10 @@ class TuckThread(Thread):
     def run(self):
         move_thread = None
         if not is_moveit_running():
-            rospy.loginfo("Starting MoveIt...")
+            rospy.loginfo("starting moveit")
             move_thread = MoveItThread()
         else:
-            rospy.loginfo("MoveIt already started...")
+            rospy.loginfo("moveit already started")
 
         rospy.loginfo("Waiting for MoveIt...")
         self.client = MoveGroupInterface("arm_with_torso", "base_link")

@@ -2,14 +2,14 @@
 Changelog for package fetch_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.9.1 (2021-03-05)
-------------------
-
-0.9.0 (2021-02-28)
+0.8.3 (2021-03-06)
 ------------------
 * Initial noetic release
+* Add srdf file path argument to move_group.launch
+* Use xacro to load fetch.srdf
+* Add srdf file path argument to move_group.launch
 * Updates maintainers
-* Contributors: Eric Relson
+* Contributors: Alex Moriarty, Carl Saldanha, Naoya Yamaguchi, Russell Toris
 
 0.8.2 (2019-08-06)
 ------------------
